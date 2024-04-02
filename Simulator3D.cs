@@ -246,28 +246,31 @@ public class Simulator3D : Spatial
 			0.0f,
 			0.0f
 		);
-
+		// pitch 前后各30度
 		strokerMesh.GlobalRotate(Vector3.Right,
 			Mathf.Deg2Rad(
-				Mathf.Lerp(45.0f, -45.0f, pitch)
+				Mathf.Lerp(30.0f, -30.0f, pitch)
 			)
 		);
-
+		// roll 左右各30度
 		strokerMesh.GlobalRotate(Vector3.Forward,
 			Mathf.Deg2Rad(
-				Mathf.Lerp(-45.0f, 45.0f, roll)
+				Mathf.Lerp(-30.0f, 30.0f, roll)
 			)
 		);
-
+		// twist 正向反向各135度
 		strokerMesh.RotateObjectLocal(Vector3.Up, 
 			Mathf.Deg2Rad(
-				Mathf.Lerp(-120.0f, 120.0f, twist)
+				Mathf.Lerp(-135.0f, 135.0f, twist)
 			)
 		);
 
 		strokerMesh.Translation = new Vector3(
+			// sway 硬件设计为左右各30mm 共60mm
 			Mathf.Lerp(0.5f, -0.5f, sway),
+			// mainStroke 硬件设计是上下各60mm 共120mm 
 			Mathf.Lerp(-1.0f, 1.0f, mainStroke),
+			// surge 硬件设计为前后各30mm 共60mm
 			Mathf.Lerp(0.5f, -0.5f, surge)
 		);
 	}
