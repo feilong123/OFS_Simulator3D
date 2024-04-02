@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
@@ -18,6 +18,9 @@ size = Vector3( 0.25, 0.25, 0.25 )
 [sub_resource type="SpatialMaterial" id=4]
 vertex_color_use_as_albedo = true
 albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=7]
+albedo_color = Color( 1, 0.960784, 0, 1 )
 
 [sub_resource type="Environment" id=2]
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -39,7 +42,7 @@ material/0 = SubResource( 4 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0 )
 mesh = SubResource( 3 )
 skeleton = NodePath("../Twist1")
-material/0 = SubResource( 4 )
+material/0 = SubResource( 7 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
