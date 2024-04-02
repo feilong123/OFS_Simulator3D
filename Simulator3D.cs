@@ -241,32 +241,44 @@ public class Simulator3D : Spatial
 			twist = script.GetPositionAt(CurrentTime);
 		}
 		
+
+		
 		strokerMesh.RotationDegrees = new Vector3(
 			0.0f,
 			0.0f,
 			0.0f
 		);
+		
+		// 创建一个新的MeshInstance节点作为子节点
+		MeshInstance childMesh = new MeshInstance();
 
-		Vector3 vectorPitch = new Vector3(1.0f, -0.5f, 0.0f);
-		vectorPitch = vectorPitch.Normalized();
+		// 将原网格的Mesh赋值给子节点
+		childMesh.Mesh = strokerMesh.Mesh;
 
-		Vector3 vectorRoll = new Vector3(0.0f, -0.5f, 1.0f);
-		vectorRoll = vectorRoll.Normalized();
+		// 将原网格的Mesh设置为null
+		strokerMesh.Mesh = null;
+
+		// 将子节点添加到原网格节点
+		strokerMesh.AddChild(childMesh);
+
+		// 将子节点移动到新的局部坐标原点 0.5F时描述的是非常标准的角度变化 也就是说此时roll和pitch为真正的角度
+		// 实际的SR6 或者 OSR2+ 可能是0.4F左右
+		childMesh.Translation = new Vector3(0.0f, 0.50f, 0.0f);
 
 		// pitch 前后各30度
-		strokerMesh.GlobalRotate(vectorPitch,
+		strokerMesh.GlobalRotate(Vector3.Right,
 			Mathf.Deg2Rad(
 				Mathf.Lerp(30.0f, -30.0f, pitch)
 			)
 		);
 		
 		// roll 左右各30度
-		strokerMesh.GlobalRotate(vectorRoll,
+		strokerMesh.GlobalRotate(Vector3.Forward,
 			Mathf.Deg2Rad(
 				Mathf.Lerp(-30.0f, 30.0f, roll)
 			)
 		);
-		// twist 正向反向各135度
+		// twist 正向反向各135度 也有180度twist那就是正向反向各度
 		strokerMesh.RotateObjectLocal(Vector3.Up, 
 			Mathf.Deg2Rad(
 				Mathf.Lerp(-135.0f, 135.0f, twist)
@@ -277,7 +289,9 @@ public class Simulator3D : Spatial
 			// sway 硬件设计为左右各30mm 共60mm
 			Mathf.Lerp(0.5f, -0.5f, sway),
 			// mainStroke 硬件设计是上下各60mm 共120mm 
-			Mathf.Lerp(-1.0f, 1.0f, mainStroke),
+			// Mathf.Lerp(-1.0f, 1.0f, mainStroke),
+			// 这个修改是因为上述坐标原点上移0.5f的缘故
+			Mathf.Lerp(-1.5f, 0.5f, mainStroke),
 			// surge 硬件设计为前后各30mm 共60mm
 			Mathf.Lerp(0.5f, -0.5f, surge)
 		);
