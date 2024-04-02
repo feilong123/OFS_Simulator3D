@@ -240,20 +240,28 @@ public class Simulator3D : Spatial
 			var script = scripts[(int)ScriptType.Twist];
 			twist = script.GetPositionAt(CurrentTime);
 		}
-
+		
 		strokerMesh.RotationDegrees = new Vector3(
 			0.0f,
 			0.0f,
 			0.0f
 		);
+
+		Vector3 vectorPitch = new Vector3(1.0f, -0.5f, 0.0f);
+		vectorPitch = vectorPitch.Normalized();
+
+		Vector3 vectorRoll = new Vector3(0.0f, -0.5f, 1.0f);
+		vectorRoll = vectorRoll.Normalized();
+
 		// pitch 前后各30度
-		strokerMesh.GlobalRotate(Vector3.Right,
+		strokerMesh.GlobalRotate(vectorPitch,
 			Mathf.Deg2Rad(
 				Mathf.Lerp(30.0f, -30.0f, pitch)
 			)
 		);
+		
 		// roll 左右各30度
-		strokerMesh.GlobalRotate(Vector3.Forward,
+		strokerMesh.GlobalRotate(vectorRoll,
 			Mathf.Deg2Rad(
 				Mathf.Lerp(-30.0f, 30.0f, roll)
 			)
