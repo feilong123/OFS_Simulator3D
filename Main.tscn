@@ -42,6 +42,7 @@ material/0 = SubResource( 7 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
+fov = 80.0
 size = 5.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
