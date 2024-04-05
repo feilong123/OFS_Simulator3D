@@ -263,9 +263,9 @@ public class Simulator3D : Spatial
 
 		// 将子节点移动到新的局部坐标原点 0.5F时描述的是非常标准的角度变化 也就是说此时roll和pitch为真正的角度
 		// 实际的SR6 或者 OSR2+ 可能是0.4F左右
-		childMesh.Translation = new Vector3(0.0f, 0.50f, 0.0f);
+		childMesh.Translation = new Vector3(0.0f, 0.8f, 0.0f);
 
-		// pitch 前后各30度
+		// pitch 前后各30度 GlobalRotate以000 标准向量变化物体
 		strokerMesh.GlobalRotate(Vector3.Right,
 			Mathf.Deg2Rad(
 				Mathf.Lerp(30.0f, -30.0f, pitch)
@@ -290,8 +290,8 @@ public class Simulator3D : Spatial
 			Mathf.Lerp(0.5f, -0.5f, sway),
 			// mainStroke 硬件设计是上下各60mm 共120mm 
 			// Mathf.Lerp(-1.0f, 1.0f, mainStroke),
-			// 这个修改是因为上述坐标原点上移0.5f的缘故
-			Mathf.Lerp(-1.5f, 0.5f, mainStroke),
+			// 这个修改是因为上述坐标原点上移0.8f的缘故
+			Mathf.Lerp(-1.8f, 0.2f, mainStroke),
 			// surge 硬件设计为前后各30mm 共60mm
 			Mathf.Lerp(0.5f, -0.5f, surge)
 		);
