@@ -250,20 +250,20 @@ public class Simulator3D : Spatial
 		);
 		
 		// 创建一个新的MeshInstance节点作为子节点
-		MeshInstance childMesh = new MeshInstance();
+		//MeshInstance childMesh = new MeshInstance();
 
 		// 将原网格的Mesh赋值给子节点
-		childMesh.Mesh = strokerMesh.Mesh;
+		//childMesh.Mesh = strokerMesh.Mesh;
 
 		// 将原网格的Mesh设置为null
-		strokerMesh.Mesh = null;
+		// strokerMesh.Mesh = null;
 
 		// 将子节点添加到原网格节点
-		strokerMesh.AddChild(childMesh);
+		// strokerMesh.AddChild(childMesh);
 
 		// 将子节点移动到新的局部坐标原点 0.5F时描述的是非常标准的角度变化 也就是说此时roll和pitch为真正的角度
 		// 实际的SR6 或者 OSR2+ 可能是0.4F左右
-		childMesh.Translation = new Vector3(0.0f, 0.8f, 0.0f);
+		// childMesh.Translation = new Vector3(0.0f, 0.8f, 0.0f);
 
 		// pitch 前后各30度 GlobalRotate以000 标准向量变化物体
 		strokerMesh.GlobalRotate(Vector3.Right,
