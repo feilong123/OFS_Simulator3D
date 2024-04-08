@@ -33,16 +33,18 @@ public class BorderlessWindow : Control
 			if(button.ButtonIndex == (int) ButtonList.Left)
 			{
 				Vector2 mousePosition = GetLocalMousePosition();
-				// 定义窗口顶部区域，这里假设顶部区域高度为50
-				Rect2 topArea = new Rect2(0, 0, this.RectSize.x, 50);
+				// 定义窗口顶部区域，这里假设顶部区域高度为100
+				Rect2 topArea = new Rect2(0, 0, this.RectSize.x, 100);
 				if(button.Pressed && !isMovingWindow && topArea.HasPoint(mousePosition))
 				{
 					isMovingWindow = true;
+					MouseDefaultCursorShape = CursorShape.Drag;
 					windowTranslationOffset = mousePosition;
 				}
 				else
 				{
 					isMovingWindow = false;
+					MouseDefaultCursorShape = CursorShape.Arrow;
 				}
 			}
 		}
