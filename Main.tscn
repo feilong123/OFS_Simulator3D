@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
 [ext_resource path="res://ResizeHandle.cs" type="Script" id=3]
+[ext_resource path="res://Camera.gd" type="Script" id=4]
 
 [sub_resource type="CylinderMesh" id=5]
 top_radius = 0.5
@@ -46,6 +47,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
 fov = 80.0
 size = 5.0
 near = 0.01
+script = ExtResource( 4 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
