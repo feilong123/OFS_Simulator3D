@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_rotate.drawio.png-464c8c73438f64efc9549bfe0048b7aa.stex"
+path="res://.import/icon_trackball_camera.svg-87202336c371094f2871b6de2f8005f0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/touch_camera/assets/button_rotate.drawio.png"
-dest_files=[ "res://.import/button_rotate.drawio.png-464c8c73438f64efc9549bfe0048b7aa.stex" ]
+source_file="res://addons/goutte.camera.trackball/icon_trackball_camera.svg"
+dest_files=[ "res://.import/icon_trackball_camera.svg-87202336c371094f2871b6de2f8005f0.stex" ]
 
 [params]
 

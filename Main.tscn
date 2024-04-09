@@ -1,11 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
 [ext_resource path="res://ResizeHandle.cs" type="Script" id=3]
-[ext_resource path="res://addons/touch_camera/scenes/TouchCamera.tscn" type="PackedScene" id=4]
+[ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
-[ext_resource path="res://addons/touch_camera/scenes/ButtonCamMode.tscn" type="PackedScene" id=6]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -42,11 +41,20 @@ material/0 = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
 mesh = ExtResource( 5 )
 
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
+
+[node name="TrackballCamera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
+current = true
+script = ExtResource( 4 )
+stabilize_horizon = true
+mouse_strength = 1.0
+inertia_strength = 0.1
+enable_pitch_limit = true
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
-
-[node name="TouchCamera" parent="." instance=ExtResource( 4 )]
-button_cam_mode = NodePath("../UI/ButtonCamMode")
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.866025, 0.353553, -0.353553, 0, 0.707107, 0.707107, 0.5, -0.612372, 0.612372, 0, 4, 0 )
@@ -56,12 +64,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 2 )
-
-[node name="ButtonCamMode" parent="UI" instance=ExtResource( 6 )]
-margin_left = 311.0
-margin_top = -83.0
-margin_right = 361.0
-margin_bottom = -33.0
 
 [node name="Label" type="Label" parent="UI"]
 margin_right = 40.0

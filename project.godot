@@ -8,37 +8,11 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Spatial",
-"class": "TouchCamera",
-"language": "GDScript",
-"path": "res://addons/touch_camera/assets/TouchCamera.gd"
-}, {
-"base": "Camera",
-"class": "TouchCamera2D",
-"language": "GDScript",
-"path": "res://addons/touch_camera/assets/TouchCamera2D.gd"
-}, {
-"base": "Reference",
-"class": "TouchEvent",
-"language": "GDScript",
-"path": "res://addons/touch_camera/TouchEvent.gd"
-} ]
-_global_script_class_icons={
-"TouchCamera": "res://addons/touch_camera/assets/tcam_icon_3d.drawio.png",
-"TouchCamera2D": "res://addons/touch_camera/assets/tcam_icon_2d.drawio.png",
-"TouchEvent": ""
-}
-
 [application]
 
 config/name="FunscriptSimulator3D"
 run/main_scene="res://Main.tscn"
 boot_splash/show_image=false
-
-[autoload]
-
-TouchCameraEventInputManager="*res://addons/touch_camera/TouchInputManager.gd"
 
 [display]
 
@@ -48,7 +22,7 @@ window/per_pixel_transparency/enabled=true
 
 [editor_plugins]
 
-enabled=PoolStringArray( "res://addons/touch_camera/plugin.cfg" )
+enabled=PoolStringArray( "res://addons/goutte.camera.trackball/plugin.cfg" )
 
 [global]
 

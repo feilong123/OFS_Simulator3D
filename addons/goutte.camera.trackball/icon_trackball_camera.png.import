@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tcam_icon_3d.drawio.png-163d35f637dcdc929ac9a103e116eed1.stex"
+path="res://.import/icon_trackball_camera.png-1f67d96a7a375568005a510700dba68a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/touch_camera/assets/tcam_icon_3d.drawio.png"
-dest_files=[ "res://.import/tcam_icon_3d.drawio.png-163d35f637dcdc929ac9a103e116eed1.stex" ]
+source_file="res://addons/goutte.camera.trackball/icon_trackball_camera.png"
+dest_files=[ "res://.import/icon_trackball_camera.png-1f67d96a7a375568005a510700dba68a.stex" ]
 
 [params]
 
