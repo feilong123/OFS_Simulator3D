@@ -1,13 +1,9 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
 [ext_resource path="res://ResizeHandle.cs" type="Script" id=3]
-[ext_resource path="res://icon/icon_front.png" type="Texture" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
-[ext_resource path="res://icon/icon_back.png" type="Texture" id=6]
-[ext_resource path="res://icon/icon_left.png" type="Texture" id=7]
-[ext_resource path="res://icon/icon_right.png" type="Texture" id=8]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -44,23 +40,9 @@ material/0 = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
 mesh = ExtResource( 5 )
 
-[node name="FrontCamera" type="Camera" parent="."]
+[node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
 size = 5.0
-near = 0.01
-
-[node name="BackCamera" type="Camera" parent="."]
-transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -3.25 )
-current = true
-
-[node name="LeftCamera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.25, 0, 0 )
-
-[node name="RightCamera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.25, 0, 0 )
-
-[node name="Left45Camera" type="Camera" parent="."]
-transform = Transform( 0.637222, 0, -0.77068, 0, 1, 0, 0.77068, 0, 0.637222, -2.51952, 0, 2.143 )
 near = 0.01
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -74,38 +56,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 2 )
-
-[node name="IconFront" type="TextureRect" parent="UI"]
-visible = false
-margin_left = 340.0
-margin_top = 540.0
-margin_right = 372.0
-margin_bottom = 572.0
-rect_scale = Vector2( 0.125, 0.125 )
-texture = ExtResource( 4 )
-
-[node name="IconBack" type="TextureRect" parent="UI"]
-margin_left = 340.0
-margin_top = 540.0
-margin_right = 372.0
-margin_bottom = 572.0
-texture = ExtResource( 6 )
-
-[node name="IconLeft" type="TextureRect" parent="UI"]
-visible = false
-margin_left = 340.0
-margin_top = 540.0
-margin_right = 372.0
-margin_bottom = 572.0
-texture = ExtResource( 7 )
-
-[node name="IconRight" type="TextureRect" parent="UI"]
-visible = false
-margin_left = 340.0
-margin_top = 540.0
-margin_right = 372.0
-margin_bottom = 572.0
-texture = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="UI"]
 margin_right = 40.0
