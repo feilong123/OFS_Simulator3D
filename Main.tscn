@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
 [ext_resource path="res://ResizeHandle.cs" type="Script" id=3]
+[ext_resource path="res://icon/icon_front.png" type="Texture" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
 
 [sub_resource type="CubeMesh" id=3]
@@ -54,7 +55,6 @@ transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -
 
 [node name="Angle45Camera" type="Camera" parent="."]
 transform = Transform( 0.637222, 0, -0.77068, 0, 1, 0, 0.77068, 0, 0.637222, -2.51952, 0, 2.143 )
-current = true
 near = 0.01
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -68,6 +68,13 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 2 )
+
+[node name="IconFront" type="TextureRect" parent="UI"]
+margin_left = 340.0
+margin_top = 540.0
+margin_right = 372.0
+margin_bottom = 572.0
+texture = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="UI"]
 margin_right = 40.0
