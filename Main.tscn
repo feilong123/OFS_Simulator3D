@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
 [ext_resource path="res://ResizeHandle.cs" type="Script" id=3]
-[ext_resource path="res://Camera.gd" type="Script" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
 
 [sub_resource type="CubeMesh" id=3]
@@ -41,12 +40,22 @@ material/0 = SubResource( 7 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0 )
 mesh = ExtResource( 5 )
 
-[node name="Camera" type="Camera" parent="."]
+[node name="FrontCamera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
-fov = 80.0
+current = true
 size = 5.0
 near = 0.01
-script = ExtResource( 4 )
+
+[node name="SideCamera" type="Camera" parent="."]
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.25, 0, 0 )
+
+[node name="BackCamera" type="Camera" parent="."]
+transform = Transform( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -3.25 )
+
+[node name="Angle45Camera" type="Camera" parent="."]
+transform = Transform( 0.637222, 0, -0.77068, 0, 1, 0, 0.77068, 0, 0.637222, -2.51952, 0, 2.143 )
+current = true
+near = 0.01
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 2 )
