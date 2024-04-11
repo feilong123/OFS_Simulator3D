@@ -76,6 +76,7 @@ margin_left = 321.0
 margin_top = 563.0
 margin_right = 374.0
 margin_bottom = 577.0
+text = "Twist: 0"
 script = ExtResource( 6 )
 
 [node name="TopHandle" type="Control" parent="UI"]
