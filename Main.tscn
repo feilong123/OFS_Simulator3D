@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
 [ext_resource path="res://ResizeHandle.cs" type="Script" id=3]
 [ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
+[ext_resource path="res://TwistLabel.gd" type="Script" id=6]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -14,7 +15,7 @@ vertex_color_use_as_albedo = true
 albedo_color = Color( 1, 0, 0, 1 )
 
 [sub_resource type="SpatialMaterial" id=7]
-albedo_color = Color( 0, 0.25098, 1, 1 )
+albedo_color = Color( 1, 0.964706, 0, 1 )
 
 [sub_resource type="Environment" id=2]
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -50,7 +51,7 @@ current = true
 script = ExtResource( 4 )
 stabilize_horizon = true
 mouse_strength = 1.0
-inertia_strength = 0.1
+inertia_strength = 0.2
 enable_pitch_limit = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -69,6 +70,13 @@ script = ExtResource( 2 )
 margin_right = 40.0
 margin_bottom = 14.0
 text = "Connecting..."
+
+[node name="TwistLabel" type="Label" parent="UI"]
+margin_left = 321.0
+margin_top = 563.0
+margin_right = 374.0
+margin_bottom = 577.0
+script = ExtResource( 6 )
 
 [node name="TopHandle" type="Control" parent="UI"]
 anchor_right = 1.0
