@@ -63,10 +63,12 @@ mesh = ExtResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
+current = true
+fov = 75.0
 
 [node name="TrackballCamera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
-current = true
+fov = 75.0
 script = ExtResource( 4 )
 stabilize_horizon = true
 mouse_strength = 1.0
