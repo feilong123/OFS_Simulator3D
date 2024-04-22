@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
 [ext_resource path="res://TwistLabel.gd" type="Script" id=6]
+[ext_resource path="res://ImmediateGeometry.gd" type="Script" id=7]
+[ext_resource path="res://Clear.gd" type="Script" id=8]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -26,6 +28,9 @@ albedo_color = Color( 0, 1, 0, 1 )
 [sub_resource type="Environment" id=2]
 ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.05
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_color = Color( 1, 0, 0, 1 )
 
 [node name="Root" type="Spatial"]
 script = ExtResource( 1 )
@@ -63,12 +68,12 @@ mesh = ExtResource( 5 )
 
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
-current = true
-fov = 75.0
+fov = 80.0
 
 [node name="TrackballCamera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
-fov = 75.0
+current = true
+fov = 80.0
 script = ExtResource( 4 )
 stabilize_horizon = true
 mouse_strength = 1.0
@@ -86,6 +91,18 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 2 )
+
+[node name="Line" type="ImmediateGeometry" parent="UI"]
+material_override = SubResource( 10 )
+script = ExtResource( 7 )
+
+[node name="Clear" type="Button" parent="UI"]
+margin_left = 30.0
+margin_top = 563.0
+margin_right = 80.0
+margin_bottom = 583.0
+text = "Clear"
+script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="UI"]
 margin_right = 40.0
