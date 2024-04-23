@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://TwistLabel.gd" type="Script" id=6]
 [ext_resource path="res://LineBottom.gd" type="Script" id=7]
 [ext_resource path="res://ClearLines.gd" type="Script" id=8]
+[ext_resource path="res://HideStroker.gd" type="Script" id=9]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -103,6 +104,14 @@ margin_right = 386.0
 margin_bottom = 549.0
 text = "Clear Lines"
 script = ExtResource( 8 )
+
+[node name="HideStroker" type="Button" parent="UI"]
+margin_left = 300.0
+margin_top = 498.0
+margin_right = 391.0
+margin_bottom = 518.0
+text = "Hide Stroker"
+script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="UI"]
 margin_right = 40.0
