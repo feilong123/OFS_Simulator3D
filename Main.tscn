@@ -6,8 +6,8 @@
 [ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=4]
 [ext_resource path="res://Main.tres" type="CylinderMesh" id=5]
 [ext_resource path="res://TwistLabel.gd" type="Script" id=6]
-[ext_resource path="res://ImmediateGeometry.gd" type="Script" id=7]
-[ext_resource path="res://Clear.gd" type="Script" id=8]
+[ext_resource path="res://LineBottom.gd" type="Script" id=7]
+[ext_resource path="res://ClearLines.gd" type="Script" id=8]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -92,16 +92,16 @@ anchor_bottom = 1.0
 rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 2 )
 
-[node name="Line" type="ImmediateGeometry" parent="UI"]
+[node name="LineBottom" type="ImmediateGeometry" parent="UI"]
 material_override = SubResource( 10 )
 script = ExtResource( 7 )
 
-[node name="Clear" type="Button" parent="UI"]
-margin_left = 30.0
-margin_top = 563.0
-margin_right = 80.0
-margin_bottom = 583.0
-text = "Clear"
+[node name="ClearLines" type="Button" parent="UI"]
+margin_left = 304.0
+margin_top = 529.0
+margin_right = 386.0
+margin_bottom = 549.0
+text = "Clear Lines"
 script = ExtResource( 8 )
 
 [node name="Label" type="Label" parent="UI"]
