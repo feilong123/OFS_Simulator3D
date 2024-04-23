@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
@@ -31,7 +31,8 @@ ambient_light_color = Color( 1, 1, 1, 1 )
 ambient_light_energy = 0.05
 
 [sub_resource type="SpatialMaterial" id=10]
-albedo_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=11]
 
 [node name="Root" type="Spatial"]
 script = ExtResource( 1 )
@@ -95,6 +96,7 @@ script = ExtResource( 2 )
 
 [node name="LineBottom" type="ImmediateGeometry" parent="UI"]
 material_override = SubResource( 10 )
+material_overlay = SubResource( 11 )
 script = ExtResource( 7 )
 
 [node name="ClearLines" type="Button" parent="UI"]
