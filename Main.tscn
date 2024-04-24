@@ -113,6 +113,7 @@ margin_left = 337.0
 margin_top = 502.0
 margin_right = 372.0
 margin_bottom = 526.0
+pressed = true
 text = "L"
 script = ExtResource( 10 )
 
@@ -121,6 +122,7 @@ margin_left = 336.0
 margin_top = 464.0
 margin_right = 371.0
 margin_bottom = 488.0
+pressed = true
 text = "S"
 script = ExtResource( 9 )
 
