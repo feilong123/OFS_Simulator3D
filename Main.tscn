@@ -101,27 +101,27 @@ material_overlay = SubResource( 11 )
 script = ExtResource( 7 )
 
 [node name="ClearLines" type="Button" parent="UI"]
-margin_left = 303.0
+margin_left = 335.0
 margin_top = 540.0
-margin_right = 385.0
+margin_right = 370.0
 margin_bottom = 560.0
-text = "Clear Lines"
+text = "C"
 script = ExtResource( 8 )
 
 [node name="ShowLines" type="CheckBox" parent="UI"]
-margin_left = 305.0
+margin_left = 337.0
 margin_top = 502.0
-margin_right = 378.0
+margin_right = 372.0
 margin_bottom = 526.0
-text = "Lines"
+text = "L"
 script = ExtResource( 10 )
 
 [node name="ShowStroker" type="CheckBox" parent="UI"]
-margin_left = 304.0
+margin_left = 336.0
 margin_top = 464.0
-margin_right = 377.0
+margin_right = 371.0
 margin_bottom = 488.0
-text = "Stroker"
+text = "S"
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="UI"]
@@ -134,7 +134,7 @@ margin_left = 20.0
 margin_top = 550.0
 margin_right = 73.0
 margin_bottom = 564.0
-text = "Twist: 0"
+text = "T: 0"
 script = ExtResource( 6 )
 
 [node name="TopHandle" type="Control" parent="UI"]

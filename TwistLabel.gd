@@ -23,4 +23,4 @@ func _process(delta):
 		var rotation_degrees = stroker.rotation_degrees
 		# 假设你想获取Y轴上的旋转度数
 		var angle_y = rotation_degrees.y
-		label.text = "Twist: " + str(int(angle_y)) + ""
+		label.text = "T: " + str(int(angle_y)) + ""
