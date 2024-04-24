@@ -7,4 +7,8 @@ func _ready():
 		connect("pressed", self, "_on_Button_pressed")  # 连接按钮的 pressed 信号
 
 func _on_Button_pressed():
-		stroker.visible = false  # 隐藏 Stroker 节点
+		if stroker.visible:
+			stroker.visible = false  # 隐藏 Stroker 节点	
+		else:
+			stroker.visible = true  # 显示 Stroker 节点	
+		

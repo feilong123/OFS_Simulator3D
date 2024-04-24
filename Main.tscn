@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
@@ -8,7 +8,8 @@
 [ext_resource path="res://TwistLabel.gd" type="Script" id=6]
 [ext_resource path="res://LineBottom.gd" type="Script" id=7]
 [ext_resource path="res://ClearLines.gd" type="Script" id=8]
-[ext_resource path="res://HideStroker.gd" type="Script" id=9]
+[ext_resource path="res://ShowStroker.gd" type="Script" id=9]
+[ext_resource path="res://ShowLines.gd" type="Script" id=10]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -100,19 +101,27 @@ material_overlay = SubResource( 11 )
 script = ExtResource( 7 )
 
 [node name="ClearLines" type="Button" parent="UI"]
-margin_left = 304.0
-margin_top = 529.0
-margin_right = 386.0
-margin_bottom = 549.0
+margin_left = 303.0
+margin_top = 540.0
+margin_right = 385.0
+margin_bottom = 560.0
 text = "Clear Lines"
 script = ExtResource( 8 )
 
-[node name="HideStroker" type="Button" parent="UI"]
-margin_left = 300.0
-margin_top = 498.0
-margin_right = 391.0
-margin_bottom = 518.0
-text = "Hide Stroker"
+[node name="ShowLines" type="CheckBox" parent="UI"]
+margin_left = 305.0
+margin_top = 502.0
+margin_right = 378.0
+margin_bottom = 526.0
+text = "Lines"
+script = ExtResource( 10 )
+
+[node name="ShowStroker" type="CheckBox" parent="UI"]
+margin_left = 304.0
+margin_top = 464.0
+margin_right = 377.0
+margin_bottom = 488.0
+text = "Stroker"
 script = ExtResource( 9 )
 
 [node name="Label" type="Label" parent="UI"]
@@ -121,10 +130,10 @@ margin_bottom = 14.0
 text = "Connecting..."
 
 [node name="TwistLabel" type="Label" parent="UI"]
-margin_left = 321.0
-margin_top = 563.0
-margin_right = 374.0
-margin_bottom = 577.0
+margin_left = 20.0
+margin_top = 550.0
+margin_right = 73.0
+margin_bottom = 564.0
 text = "Twist: 0"
 script = ExtResource( 6 )
 
