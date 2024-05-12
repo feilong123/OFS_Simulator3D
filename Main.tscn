@@ -76,7 +76,7 @@ fov = 80.0
 [node name="TrackballCamera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.25 )
 current = true
-fov = 80.0
+fov = 90.0
 script = ExtResource( 4 )
 stabilize_horizon = true
 mouse_strength = 1.0
@@ -96,6 +96,7 @@ rect_min_size = Vector2( 0, 40 )
 script = ExtResource( 2 )
 
 [node name="LineBottom" type="ImmediateGeometry" parent="UI"]
+visible = false
 material_override = SubResource( 10 )
 material_overlay = SubResource( 11 )
 script = ExtResource( 7 )
@@ -113,7 +114,6 @@ margin_left = 337.0
 margin_top = 502.0
 margin_right = 372.0
 margin_bottom = 526.0
-pressed = true
 text = "L"
 script = ExtResource( 10 )
 
