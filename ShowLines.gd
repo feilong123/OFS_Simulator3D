@@ -8,7 +8,7 @@ func _ready():
 
 func _on_Button_pressed():
 		if geometryBottom.visible:
-			geometryBottom.visible = false  # 隐藏 Stroker 节点	
+			geometryBottom.visible = false  # 隐藏轨迹	
 		else:
-			geometryBottom.visible = true  # 显示 Stroker 节点	
+			geometryBottom.visible = true  # 显示轨迹	
 		
