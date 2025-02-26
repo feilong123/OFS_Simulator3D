@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Simulator3D.cs" type="Script" id=1]
 [ext_resource path="res://BorderlessWindow.cs" type="Script" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://ClearLines.gd" type="Script" id=8]
 [ext_resource path="res://ShowStroker.gd" type="Script" id=9]
 [ext_resource path="res://ShowLines.gd" type="Script" id=10]
+[ext_resource path="res://Reset.gd" type="Script" id=11]
 
 [sub_resource type="CubeMesh" id=3]
 size = Vector3( 0.25, 0.25, 0.25 )
@@ -101,11 +102,19 @@ material_override = SubResource( 10 )
 material_overlay = SubResource( 11 )
 script = ExtResource( 7 )
 
+[node name="Reset" type="Button" parent="UI"]
+margin_left = 341.0
+margin_top = 434.0
+margin_right = 376.0
+margin_bottom = 454.0
+text = "R"
+script = ExtResource( 11 )
+
 [node name="ClearLines" type="Button" parent="UI"]
-margin_left = 335.0
-margin_top = 540.0
-margin_right = 370.0
-margin_bottom = 560.0
+margin_left = 344.0
+margin_top = 538.0
+margin_right = 379.0
+margin_bottom = 558.0
 text = "C"
 script = ExtResource( 8 )
 
